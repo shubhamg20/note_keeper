@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 //const ejs = require("ejs");
 const cors=require('cors');
 const app = express();
+require('dotenv').config()
 app.use(cors());
 //const notes=require("./models/notes.js");
 app.use(bodyParser.urlencoded({extended: true}));
@@ -16,7 +17,7 @@ mongoose.connect(DB, {useNewUrlParser: true,useCreateIndex: true, useUnifiedTopo
 }).catch((err)=>{
     console.log(err);
 });;
-app.listen(9002, function() {
+app.listen(process.env.PORT||9002, function() {
     console.log("Server started on port 9002");
     });
 //   notes.find({},(err,notes)=>{

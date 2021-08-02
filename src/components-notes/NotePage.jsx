@@ -6,20 +6,11 @@ import Note from "./Note";
 import CreateArea from "./CreateArea";
 function NotePage(props) {
   var info = {};
-  // info={action:"get"}
-  // fetch("http://localhost:9002/notes", {
-  //   method: "POST",
-  //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  //   body: JSON.stringify(info),
-  // }).then((res) => res.json()).then((res)=>{
-  //   console.log(res);
-  //    setNotes(res);
-  // })
   const [notes, setNotes] = useState([]);
   function addNote(note) {
     info = { note, action: "add" };
     console.log(info, note);
-    fetch("http://localhost:9002/notes", {
+    fetch("https://git.heroku.com/note-keeper100.git/notes", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: JSON.stringify(info),

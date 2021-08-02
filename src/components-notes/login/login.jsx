@@ -20,7 +20,7 @@ export default function Login(props) {
     const { email, password } = user;
     event.preventDefault();
     if (email && password.length >= 6) {
-      fetch("http://localhost:9002/login", {
+      fetch("https://git.heroku.com/note-keeper100.git/login", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: JSON.stringify(user),
