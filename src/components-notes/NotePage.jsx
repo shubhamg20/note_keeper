@@ -10,7 +10,7 @@ function NotePage(props) {
   function addNote(note) {
     info = { note, action: "add" };
     console.log(info, note);
-    fetch("https://git.heroku.com/note-keeper100.git/notes", {
+    fetch("https://note-keeper100.herokuapp.com/notes", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: JSON.stringify(info),
@@ -24,7 +24,7 @@ function NotePage(props) {
 
   function deleteNote(note) {
     info = { note, action: "delete" };
-    fetch("http://localhost:9002/notes", {
+    fetch("https://note-keeper100.herokuapp.com/notes", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: JSON.stringify(info),

@@ -19,7 +19,7 @@ export default function Register() {
     const { email, password } = user;
     if (email && password.length >= 6) {
       console.log("submit");
-      fetch("https://git.heroku.com/note-keeper100.git/register", {
+      fetch("https://note-keeper100.herokuapp.com/register", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: JSON.stringify(user),
